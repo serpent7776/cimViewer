@@ -25,6 +25,7 @@ public class CimViewer extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		pixmap = PixmapIO.readCIM(handle);
 		img = new Texture(pixmap);
+		Gdx.gl.glClearColor(0.333f, 0.333f, 0.333f, 1);
 	}
 
 	@Override
@@ -34,7 +35,6 @@ public class CimViewer extends ApplicationAdapter {
 
 	@Override
 	public void render() {
-		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
 		batch.draw(img, 0, 0);
